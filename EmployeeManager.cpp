@@ -169,6 +169,9 @@ statusType EmployeeManager::averageBumpGradeBetweenSalaryByGroup(int CompanyID, 
         CompanyID > num_of_comps) {
         return INVALID_INPUT1;
     }
+    if(CompanyID == 23 and higherSalary == 3414823){
+        int s = 3;
+    }
     long double print;
     double amountofemployees=0;
     long double amoutofgrades=0;

@@ -821,6 +821,9 @@ long double RankTree<S>::getGradesByKey2(S key, int *counter, BSTNode<S> *curr) 
 template<class S>
 BSTNode<S> *RankTree<S>::GetLow(int key) {
 
+    if(this == nullptr){
+        return nullptr;
+    }
     BSTNode<S> *curr = this->root;
     BSTNode<S> *ret = nullptr;
 
@@ -848,6 +851,9 @@ BSTNode<S> *RankTree<S>::GetLow(int key) {
 
 template<class S>
 BSTNode<S> *RankTree<S>::GetHigh(int key) {
+    if(this == nullptr){
+        return nullptr;
+    }
     BSTNode<S> *curr = this->root;
     BSTNode<S> *ret = nullptr;
 
