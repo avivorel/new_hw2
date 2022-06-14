@@ -94,7 +94,9 @@ int unionFind::unite(int index1, int index2,  double toadd) {
 void unionFind::Union(int acquire, int target, double Factor)
 {
     Company* acquirecomp = Find(acquire);
+    acquire = acquirecomp->getId();
     Company* tarcomp = Find(target);
+    target = tarcomp->getId();
     double value = Factor * FindValue(target);
     if (size_[target] <= size_[acquire])
     {
@@ -117,7 +119,6 @@ void unionFind::Union(int acquire, int target, double Factor)
         val[temp] += value;
         val[temp2] -= val[temp];
         parents[temp2 ] = temp;
-        size_[acquire]+=size_[target];
     }
     else
     {
@@ -137,7 +138,7 @@ void unionFind::Union(int acquire, int target, double Factor)
         parents[temp ] = temp2;
     }
     size_[target] += size_[acquire];
-    owner[target] = owner[acquire];
+    owner[target] = acquire;
 }
 
 double unionFind::FindValue(int index) {

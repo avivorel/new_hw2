@@ -12,7 +12,7 @@ statusType EmployeeManager::addEmployee(int empid, int compid, int grade) {
     if (empid <= 0 or compid <= 0 or compid > num_of_comps) {
         return INVALID_INPUT1;
     }
-    if(empid == 780){
+    if(empid == 1155){
         int s= 3;
     }
     if(empid == 70){
