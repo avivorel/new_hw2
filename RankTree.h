@@ -1030,14 +1030,14 @@ class MyHash {
 
 
         for (int i = 0; i < oldSize; ++i) {
-            MyNode *currentNode = table[i];
+            MyNode *currentNode = old_table[i];
 
 
             while (currentNode != nullptr) {
                 this->Insert(currentNode->GetEmployee());
                 currentNode = currentNode->GetNext();
             }
-            this->table[i] = nullptr;//disconnecting the old table from the nodes
+           // this->table[i] = nullptr;//disconnecting the old table from the nodes
         }
         delete[] (old_table);//TODO think about it later
     }
@@ -1093,7 +1093,7 @@ public:
         int indexToInsert = this->hashFunc(key);
         try {
             MyNode *newNode = new MyNode(data);
-
+            MyNode *A = this->table[indexToInsert];
             newNode->SetNext(this->table[indexToInsert]);
             this->table[indexToInsert] = newNode;
             this->capacity++;

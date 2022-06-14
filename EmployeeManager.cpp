@@ -12,6 +12,12 @@ statusType EmployeeManager::addEmployee(int empid, int compid, int grade) {
     if (empid <= 0 or compid <= 0 or compid > num_of_comps) {
         return INVALID_INPUT1;
     }
+    if(empid == 780){
+        int s= 3;
+    }
+    if(empid == 70){
+        int s = 22;
+    }
     bool exists = all_employees_hash->isExist(empid);
     if (exists) {
         return FAILURE1;
@@ -36,6 +42,9 @@ statusType EmployeeManager::removeEmployee(int empid) {
 
     if (empid <= 0) {
         return INVALID_INPUT1;
+    }
+    if(empid == 780){
+        int s = 7;
     }
     bool exists = all_employees_hash->isExist(empid);
     if (!exists) {

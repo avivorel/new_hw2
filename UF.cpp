@@ -117,6 +117,7 @@ void unionFind::Union(int acquire, int target, double Factor)
         val[temp] += value;
         val[temp2] -= val[temp];
         parents[temp2 ] = temp;
+        size_[acquire]+=size_[target];
     }
     else
     {
@@ -135,19 +136,14 @@ void unionFind::Union(int acquire, int target, double Factor)
         val[temp ] += value - val[temp2 ];
         parents[temp ] = temp2;
     }
-    size_[acquire] += size_[target];
-    owner[target] = acquire;
+    size_[target] += size_[acquire];
+    owner[target] = owner[acquire];
 }
 
 double unionFind::FindValue(int index) {
     if (index > size || index < 0) {
         return -1;
     }
-    if(index==10)
-    {
-        int a=4;
-    }
-
     int uf_iter = index;
     double value = 0;
 
