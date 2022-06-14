@@ -149,6 +149,9 @@ statusType EmployeeManager::sumOfBumpGradeBetweenTopWorkersByGroup(int CompanyID
         }
         print = comp->getEmployees_bySalary()->GetGradesByRank(m);
     } else {
+        if(non_zero_sal_avl->root == nullptr){
+            return FAILURE1;
+        }
         if (non_zero_sal_avl->root->rank < m) {
             return FAILURE1;
         }
